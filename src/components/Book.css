@@ -1,7 +1,10 @@
 .bookPictureCollection{
-    height: 40px;
-    width: 30px;
+    height: 70px;
+    width: 50px;
 }
 .bookName{
-    font-size: 5px;    
+    font-size: 15px;    
+}
+.book-author{
+    font-size: 10px;
 }

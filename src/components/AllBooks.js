@@ -27,19 +27,21 @@ function AllBooks()  {
         <>
           
           <button onClick = {getBooks} > get books </button> 
-          {books==null? "loading" : 
-          books.map(book =>
-            <>
-              <Book key = {book}
-              book = {{name: book.name, id: book.id, timesBorrowed: book.timesBorrowed}} 
-              >
+          <div className = "booksCollection">
+            {books==null? "" : 
+            books.map(book =>
+              <>
+                <Book key = {book}
+                book = {{name: book.name, id: book.id, timesBorrowed: book.timesBorrowed, author: book.author}} 
+                >
+                
+                </Book>  
+                <button id={book.id}  onClick = {() => removeBook(book.id)}>remove</button>
+                
+              </>
               
-              </Book>  
-              <button id={book.id + 30}  onClick = {() => removeBook(book.id)}>remove</button>
-              
-            </>
-            
-          )}
+            )}
+          </div>
           
           
         </>
@@ -55,6 +57,9 @@ function AllBooks()  {
         console.log("after remove, this should start getting the books again")
         getBooks()
         console.log("new books probably re- fetched")
+      })
+      .catch((fail) => {
+        console.log("something went wrong")
       })
       
       // .catch((error) => {

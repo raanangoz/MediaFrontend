@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 
-    function BookExpandedDetails(){
-        return(
-            console.log("opened expanded details")
-        )
+class BookExpandedDetails extends Component{
 
+    render(){
+        return <h1> 5 </h1>
     }
-export default BookExpandedDetails;
+}
+export default BookExpandedDetails
